@@ -1,9 +1,6 @@
 package KuliahPackage;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 1. mengurutkan dan mencari data pada array
@@ -19,7 +16,13 @@ public class ArrayProcessing {
                 "\n2. mengurutkan dan menyisipkan elemen pada array" +
                 "\n3. batas atas array dua dimensi" +
                 "\n4. membalik array" +
-                "\n5. menampilkan string dari array ke console");
+                "\n5. menampilkan string dari array ke console" +
+                "\n6. mencari elemen minimum dan maximum" +
+                "\n7. menggabungkan dua array" +
+                "\n8. mengisi sekaligus inisialisasi array" +
+                "\n9. extend array setelah inisialisasi" +
+                "\n10. mengurutkan dan mencari elemen array" +
+                "\n11. menampilkan string dari array ke console");
         System.out.print("Menu => ");
         Scanner input = new Scanner(System.in);
         int menu = input.nextInt();
@@ -72,6 +75,49 @@ public class ArrayProcessing {
                 for (int i = 0; i < greeting.length; i++) {
                     System.out.println(greeting[i]);
                 }
+                break;
+            case 6:
+                Integer[] numbers = {8, 2, 7, 1, 4, 9, 5};
+                int min = (int) Collections.min(Arrays.asList(numbers));
+                int max = (int) Collections.max(Arrays.asList(numbers));
+                System.out.println("Min number: " + min);
+                System.out.println("Max number: " + max);
+                break;
+            case 7:
+                String a[] = {"A", "E", "I"};
+                String b[] = {"O", "U"};
+                List list = new ArrayList(Arrays.asList(a));
+                list.addAll(Arrays.asList(b));
+                Object[] c = list.toArray();
+                System.out.println(Arrays.toString(c));
+                break;
+            case 8:
+                array = new int[6];
+                Arrays.fill(array, 100);
+                for (int i = 0, n = array.length; i < n; i++) {
+                    System.out.println(array[i]);
+                }
+                System.out.println();
+                Arrays.fill(array, 3, 6, 50);
+                for (int i = 0, n = array.length; i < n; i++) {
+                    System.out.println(array[i]);
+                }
+                break;
+            case 9:
+                String[] names = new String[]{"A", "B", "C"};
+                String[] extended = new String[5];
+                extended[3] = "D";
+                extended[4] = "E";
+                System.arraycopy(names, 0, extended, 0, names.length);
+                for (String str : extended) {
+                    System.out.println(str);
+                }
+                break;
+            case 10:
+                Arrays.sort(array);
+                printArray("Sorted array", array);
+                index = Arrays.binarySearch(array, 2);
+                System.out.println("Found 2 @ " + index);
                 break;
         }
     }
