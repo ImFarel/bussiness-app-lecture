@@ -99,8 +99,8 @@ public class ArrayProcessing {
                 }
                 System.out.println();
                 Arrays.fill(array, 3, 6, 50);
-                for (int i = 0, n = array.length; i < n; i++) {
-                    System.out.println(array[i]);
+                for (int value : array) {
+                    System.out.println(value);
                 }
                 break;
             case 9:
