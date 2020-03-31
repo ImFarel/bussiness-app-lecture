@@ -40,7 +40,7 @@ public class Soal2 {
 
         // kalo genap
         if (n % 2 != 0)
-            return (double)a[n / 2];
+            return (double) a[n / 2];
 
         return (double) (a[(n - 1) / 2] + a[n / 2]) / 2.0;
 
