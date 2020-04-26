@@ -51,8 +51,8 @@ public class nomor2 {
         nomor2 stack = new nomor2();
 
         stack.push(5);
-        stack.push(3);
         stack.push(2);
+        stack.push(1);
         stack.push(4);
 
         System.out.println("======= PUSH =======");
